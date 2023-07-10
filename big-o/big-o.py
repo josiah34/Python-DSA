@@ -77,10 +77,10 @@ def print_items(n):
 
 ### Terms
 
-Loop within a Loop - O(n^2)
+# Loop within a Loop - O(n^2)
 
-Proportional - O(n)
+# Proportional - O(n)
 
-Divide and Conquer - O(log n)
+# Divide and Conquer - O(log n)
 
-Constant - O(1)
+# Constant - O(1)
