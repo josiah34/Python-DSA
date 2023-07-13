@@ -108,6 +108,11 @@ class LinkedList:
             return self.prepend(value)
         if index == self.length:
             return self.append(value)
+        new_node = Node(value)
+        temp = self.get(index - 1)
+        new_node.next = temp.next
+        temp.next = new_node
+        return new_node
         
         
         
@@ -116,6 +121,7 @@ my_linked_list.append(6)
 my_linked_list.append(5)
 my_linked_list.append(7)
 my_linked_list.append(8)
+my_linked_list.insert(1,17)
 # # my_linked_list.append(4)
 # # my_linked_list.pop_first()
 # # my_linked_list.append(6)
