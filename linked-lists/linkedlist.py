@@ -62,6 +62,7 @@ class LinkedList:
             # Set the
             new_node.next = self.head
             self.head = new_node
+            self.length += 1
             print(f"Value added to the front of the list: {self.head.value}")
 
     def pop_first(self):
@@ -80,12 +81,31 @@ class LinkedList:
             self.head = self.head.next
             temp.next = None
             self.length -= 1
+            
+    def get(self, index):
+        # Give an error message if the index is greater than the length of the list or less than 0
+        if index >= self.length or index < 0:
+            print("Invalid index")
+        else:
+            temp = self.head
+            # For loop iterates through list until the index is reached and then sets the temp node to the node at the index                                                
+            for _ in range(index):
+                temp = temp.next
+            # Print the value of the node at the index
+            return temp
 
 
 my_linked_list = LinkedList(4)
 my_linked_list.append(6)
-my_linked_list.append(4)
-my_linked_list.pop_first()
-my_linked_list.append(6)
-my_linked_list.prepend(9)
-my_linked_list.print_list()
+my_linked_list.append(5)
+my_linked_list.append(7)
+my_linked_list.append(8)
+# # my_linked_list.append(4)
+# # my_linked_list.pop_first()
+# # my_linked_list.append(6)
+# my_linked_list.prepend(9)
+# my_linked_list.print_list()
+
+node = my_linked_list.get(4)
+
+print(node.value)
