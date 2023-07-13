@@ -1,9 +1,7 @@
-
 class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
-
 
 
 class LinkedList:
@@ -54,24 +52,20 @@ class LinkedList:
             self.tail = None
         # Return the deleted node object
         return temp
-    
+
     def prepend(self, value):
         new_node = Node(value)
         if self.head == None:
-            self.head = new_node 
+            self.head = new_node
             self.tail = new_node
         else:
-            # Set the 
+            # Set the
             new_node.next = self.head
-            self.head = new_node 
+            self.head = new_node
             print(f"Value added to the front of the list: {self.head.value}")
-        
-            
-
 
 
 my_linked_list = LinkedList(4)
 my_linked_list.append(6)
 my_linked_list.prepend(9)
 my_linked_list.print_list()
-
