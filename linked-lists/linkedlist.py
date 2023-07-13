@@ -64,8 +64,28 @@ class LinkedList:
             self.head = new_node
             print(f"Value added to the front of the list: {self.head.value}")
 
+    def pop_first(self):
+        # Checking for an empty list
+        if self.head == None:
+            return None
+        # Checking for a list with only one value
+        if self.head.next == None:
+            self.head = None
+            self.tail = None
+            self.length = 0
+            return True
+        # List of size greater than 1
+        else:
+            temp = self.head
+            self.head = self.head.next
+            temp.next = None
+            self.length -= 1
+
 
 my_linked_list = LinkedList(4)
+my_linked_list.append(6)
+my_linked_list.append(4)
+my_linked_list.pop_first()
 my_linked_list.append(6)
 my_linked_list.prepend(9)
 my_linked_list.print_list()
