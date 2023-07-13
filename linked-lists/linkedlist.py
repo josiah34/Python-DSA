@@ -63,7 +63,7 @@ class LinkedList:
             new_node.next = self.head
             self.head = new_node
             self.length += 1
-            print(f"Value added to the front of the list: {self.head.value}")
+            return self.head
 
     def pop_first(self):
         # Checking for an empty list
@@ -100,8 +100,17 @@ class LinkedList:
         # Change the value of the node object to the one passed into the method
         temp.value = value
         return temp
-
-
+    
+    def insert(self, index, value):
+        if index < 0 or index > self.length:
+            return False
+        if index == 0:
+            return self.prepend(value)
+        if index == self.length:
+            return self.append(value)
+        
+        
+        
 my_linked_list = LinkedList(4)
 my_linked_list.append(6)
 my_linked_list.append(5)
