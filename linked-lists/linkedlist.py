@@ -128,30 +128,55 @@ class LinkedList:
         temp.next = None
         self.length -= 1
         return temp 
+    
+    def reverse(self):
+        temp = self.head
+        self.head = self.tail
+        self.tail = temp 
+        after = temp.next
+        before = None 
+        for _ in range(self.length):
+            after = temp.next
+            temp.next = before 
+            before = temp
+            temp = after
         
         
  
-        
-        
-        
-        
-my_linked_list = LinkedList(4)
-my_linked_list.append(6)
-my_linked_list.append(5)
-my_linked_list.append(7)
-my_linked_list.append(8)
-my_linked_list.insert(1,17)
-# # my_linked_list.append(4)
-# # my_linked_list.pop_first()
-# # my_linked_list.append(6)
-# my_linked_list.prepend(9)
-# my_linked_list.print_list()
 
-my_linked_list.set(0, 99)
-my_linked_list.print_list()
-print("-----------------------------")
-print(my_linked_list.remove(4))
-my_linked_list.print_list()
+
+my_link_list = LinkedList(1)
+my_link_list.append(2)
+my_link_list.append(3)
+my_link_list.append(4)
+
+
+my_link_list.reverse()
+
+my_link_list.reverse()
+
+
+my_link_list.print_list()
+        
+        
+        
+# my_linked_list = LinkedList(4)
+# my_linked_list.append(6)
+# my_linked_list.append(5)
+# my_linked_list.append(7)
+# my_linked_list.append(8)
+# my_linked_list.insert(1,17)
+# # # my_linked_list.append(4)
+# # # my_linked_list.pop_first()
+# # # my_linked_list.append(6)
+# # my_linked_list.prepend(9)
+# # my_linked_list.print_list()
+
+# my_linked_list.set(0, 99)
+# my_linked_list.print_list()
+# print("-----------------------------")
+# print(my_linked_list.remove(4))
+# my_linked_list.print_list()
 # node = my_linked_list.get(4)
 
 # print(node.value)
