@@ -67,6 +67,16 @@ class LinkedList:
     #                                    #
     #                                    #
     ######################################
+    def find_middle_node(self):
+        # Set slow and fast pointers
+        slow = self.head
+        fast = self.head
+        # Iterate through list until the fast pointer reaches the end of the list or has no next node
+        while fast is not None and fast.next is not None:
+            slow = slow.next
+            fast = fast.next.next 
+        # Return the slow pointer
+        return slow 
 
 
 
