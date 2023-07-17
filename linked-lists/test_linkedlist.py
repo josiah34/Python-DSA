@@ -83,3 +83,32 @@ def test_insert(linked_list):
 
     # Check if the value is inserted at the correct position
     assert linked_list.get(1).value == 2
+
+
+def test_reverse(linked_list):
+    # Append a value to the linked list
+    linked_list.append(2)
+
+    # Reverse the linked list
+    linked_list.reverse()
+
+    # Check if the length is updated correctly
+    assert linked_list.length == 2
+
+    # Check if the head and tail are updated correctly
+    assert linked_list.head.value == 2
+    assert linked_list.tail.value == 1
+
+
+def test_remove(linked_list):
+    # Append a value to the linked list
+    linked_list.append(2)
+
+    # Remove the value at index 1
+    linked_list.remove(1)
+
+    # Check if the length is updated correctly
+    assert linked_list.length == 1
+
+    # Check if the value is removed from the linked list
+    assert linked_list.get(1) is None
