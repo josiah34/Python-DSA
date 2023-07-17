@@ -1,4 +1,4 @@
-'''
+"""
 
 Implement the find_middle_node method for the LinkedList class.
 
@@ -36,12 +36,14 @@ The method should only traverse the linked list once.  In other words, you can o
 
 
 
-'''
+"""
+
+
 class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
-        
+
 
 class LinkedList:
     def __init__(self, value):
@@ -49,7 +51,6 @@ class LinkedList:
         self.head = new_node
         self.tail = new_node
 
-        
     def append(self, value):
         new_node = Node(value)
         if self.head == None:
@@ -59,7 +60,6 @@ class LinkedList:
             self.tail.next = new_node
             self.tail = new_node
         return True
-        
 
     # WRITE FIND_MIDDLE_NODE METHOD HERE #
     #                                    #
@@ -74,11 +74,9 @@ class LinkedList:
         # Iterate through list until the fast pointer reaches the end of the list or has no next node
         while fast is not None and fast.next is not None:
             slow = slow.next
-            fast = fast.next.next 
+            fast = fast.next.next
         # Return the slow pointer
-        return slow 
-
-
+        return slow
 
 
 my_linked_list = LinkedList(1)
@@ -87,4 +85,4 @@ my_linked_list.append(3)
 my_linked_list.append(4)
 my_linked_list.append(5)
 
-print( my_linked_list.find_middle_node().value )
+print(my_linked_list.find_middle_node().value)
